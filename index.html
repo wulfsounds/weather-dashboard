@@ -13,7 +13,7 @@
     <!-- Third-Party Fonts.css -->
     <link rel="stylesheet" href="https://use.typekit.net/wxx1acr.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
-    <title>Weather. | A Web</title>
+    <title>Weather. | Made with OpenWeather API</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                     <div id="search" class="form-group">
                         <h2 class="card-title col-12">search for a city.</h2>
                         <div class="input-group input-group-lg">
-                            <input id="get-city" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Houston">
+                            <input id="get-city" type="text" class="form-control" aria-label="Sizing example input" aria-described="inputGroup-sizing-lg" placeholder="Houston">
                         </div>
                     </div>
                     <a id="search-btn" class="btn btn-primary btn-lg col-12">Search</a>
@@ -40,11 +40,13 @@
             <div id="dashboard" class="container-fluid">
                 <div class="display-top">
                     <h2 class="city-name">houston.</h2>
+                    <p class="current-date"></p>
                     <div class="forecast">
                         <p class="temp">Temp:</p>
                         <p class="wind">Wind:</p>
                         <p class="humid">Humidity:</p>
-                        <p class="uv-index">UV Index:</p>
+                        <p class="uv-index">UV Index: <span><h4 class="badge"></h4></span>
+                        </p>
                     </div>
                 </div>
                 <div id="display-bottom"></div>
@@ -72,6 +74,6 @@
 <!-- Self-Coded -->
 <!-- <script type="text/javascript" src="./assets/js/script.js"></script> -->
 <!-- Debug Script -->
-<script type="text/javascript" src="./assets/js/test.js"></script>
+<script src="./assets/js/test.js"></script>
 
 </html>
