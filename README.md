@@ -8,22 +8,29 @@
 
 🧚🏻 Hey! Listen!
 
-*  
+~~*  Complete function that returns lat/long with city, print to page.~~
+*  Current forecast, 5 day.
+*  Create a function that adds previous searches below the search button.
+*  Resize current font-size for all headers
+*  Remove flex shrink from 5-day containers.
+
 
 ## **JavaScript Updates**
-
-
+* Created test.js for debug.
+* Created a function that accpets a city and returns latitude and longitude.
+* Added Open Window geocode and weather APIs.
+* 
 
 ## **HTML Updates**
-
+* There's a container in a container in a container in a container...
+* Created Search bar with responsive Search button.
 
 
 ## **CSS Updates**
-
+INTRODUCING COLORS
 
 
 ## **Troubleshooting**
-
 
 <!-- ## **Contributers**
   
