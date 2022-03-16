@@ -60,16 +60,35 @@ async function weatherAPI() {
 			console.log(response.statusText);
 			return response.json();
 		})
-		.then(function (data) {
+    .then(function (data) {
 			console.log(data);
-			console.log(Math.floor(data.current.temp));
-			console.log(data.current.wind_speed);
-			console.log(data.current.humidity); // concatinate with "%"
-			console.log(data.daily[0].uvi);
+			weather = data;
+      return weather
 		});
+   dashboard();
 }
 
-// Assign localStorage to city and fetch data from OpenWeather API;
-// var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&current&units=imperial&appid=${apiKey}`;
+function dashboard() {
+  console.log(weather)
+// Build Header with City Name, todays date, and weather icon
+// Current Date
+let icon = weather.current.weather[0].icon;
+let currentDate = moment().format("L");
+// Weather Icon
+let img = document.createElement("img");
+img.setAttribute(`src`, `http://openweathermap.org/img/wn/${icon}@2x.png`);
+img.setAttribute("alt", "weather-icon");
+// Header
+$(".city-name").text(`${getLocation.toLowerCase()}.`);
+$(".current-date").text(`(${currentDate})`);
+$(".city-name").append(img);
 
-// new API: https://api.openweathermap.org/data/2.5/onecall?...
+// Populate top display with temp, wind, humidity, and UV
+// Temp
+$(".temp").text(`Temp: ${Math.floor(weather.current.temp)}`);
+// Wind
+$(".wind").text(`Wind: ${weather.current.wind_speed} MPH`);
+// Humidity
+$(".humid").text(`Humidity: ${weather.current.humidity}%`);
+//add UV Index
+}

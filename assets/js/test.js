@@ -2,8 +2,8 @@
 let getLocation;
 let apiKey = "1f56ef55a0f3d4c3bb739f2d664d73f9";
 const searchBtn = document.getElementById("search-btn");
-
 let coordinates;
+let weather;
 
 // Empty weather variables;
 let temp;
@@ -23,13 +23,13 @@ async function localCity(e) {
 		localStorage.setItem("get-city", getLocation.value);
 		getLocation.value = localStorage.getItem("get-city");
 		getLocation = getLocation.value;
-		// openAPI(); Run localStorage value through geocode then weather API
+		// openAPI(); Run localStorage value through geocode then weather API;
 		weatherAPI();
 		// geoGrab();
 	}
 }
 
-// getLocation is set to city and returns coordinate data
+// getLocation is set to city and returns coordinate data;
 async function geoGrab() {
 	let city = getLocation;
 	let geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
@@ -47,13 +47,14 @@ async function geoGrab() {
 		});
 }
 
-// Coordinate data is passed through the weather API and returns weather data
+// Coordinate data is passed through the weather API and returns weather data;
 async function weatherAPI() {
 	await geoGrab();
 	console.log(coordinates);
 
+	// Assigns coordinates to lat/lon and passes through API;
 	let [lat, lon] = [coordinates[0].lat, coordinates[0].lon];
-	let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imerprial&appid=${apiKey}`;
+	let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
 
 	await fetch(queryURL)
 		.then(function (response) {
@@ -62,14 +63,54 @@ async function weatherAPI() {
 		})
 		.then(function (data) {
 			console.log(data);
-			console.log(Math.floor(data.current.temp));
-			console.log(data.current.wind_speed);
-			console.log(data.current.humidity); // concatinate with "%"
-			console.log(data.daily[0].uvi);
+
+			// console.log(Math.floor(data.current.temp));
+			// console.log(data.current.wind_speed);
+			// console.log(data.current.humidity); // concatinate with "%"
+			// console.log(data.daily[0].uvi);
+			weather = data;
+            return weather
 		});
+        dashboard();
 }
 
-// Assign localStorage to city and fetch data from OpenWeather API;
-// var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&current&units=imperial&appid=${apiKey}`;
+function dashboard() {
+    console.log(weather)
+	// Build Header with City Name, todays date, and weather icon
+	// Current Date
+	let icon = weather.current.weather[0].icon;
+	let currentDate = moment().format("L");
+	// Weather Icon
+	let img = document.createElement("img");
+	img.setAttribute(`src`, `http://openweathermap.org/img/wn/${icon}@2x.png`);
+	img.setAttribute("alt", "weather-icon");
+	// Header
+	$(".city-name").text(`${getLocation.toLowerCase()}.`);
+	$(".current-date").text(`(${currentDate})`);
+	$(".city-name").append(img);
 
-// new API: https://api.openweathermap.org/data/2.5/onecall?...
+	// Populate top display with temp, wind, humidity, and UV
+	// Temp
+	$(".temp").text(`Temp: ${Math.floor(weather.current.temp)}`);
+	// Wind
+	$(".wind").text(`Wind: ${weather.current.wind_speed} MPH`);
+	// Humidity
+	$(".humid").text(`Humidity: ${weather.current.humidity}%`);
+	if (weather.daily[0].uvi <= 2) {
+		$(".badge").css("background-color", "green");
+        $(".badge").text(`${weather.daily[0].uvi}`);
+	} else if (weather.daily[0].uvi >= 3 || weather.daily[0].uvi <= 5) {
+		$(".badge").css("background-color", "rgb(186, 186, 3)");
+        $(".badge").text(`${weather.daily[0].uvi}`);
+	} else if (weather.daily[0].uvi >= 6 || weather.daily[0].uvi <= 7) {
+		$(".badge").css("background-color", "orange");
+        $(".badge").text(`${weather.daily[0].uvi}`);
+	} else if (weather.daily[0].uvi >= 8 || weather.daily[0].uvi <= 10) {
+		$(".badge").css("background-color", "red");
+        $(".badge").text(`${weather.daily[0].uvi}`);
+	} else if (weather.daily[0].uvi >= 11) {
+		$(".badge").css("background-color", "purple");
+        $(".badge").text(`${weather.daily[0].uvi}`);
+	}
+	// $('.uv-index').text(`UV Index: ${weather.daily[0].uvi}%`);
+}
