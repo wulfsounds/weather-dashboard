@@ -21,6 +21,18 @@ h1 {
     margin: 0 auto;
 }
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .main-contain {
     display: flex;
     justify-content: space-between;
@@ -54,17 +66,6 @@ h3 {
     font-weight: 800;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 
 .forecast {
     font-size: 25px;
