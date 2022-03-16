@@ -1,20 +1,23 @@
-* {
+p {
     font-family: neue-haas-grotesk-display,sans-serif;
     font-weight: 300;
     font-style: normal;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
 }
 
 h1 {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-	height: 8vh;
+	height: 10vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: kansasnew, serif;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 800;
     font-style: normal;
     color: aliceblue;
@@ -52,18 +55,23 @@ h3 {
     font-family: kansasnew, serif;
     font-weight: 900;
     font-style: normal;
-    font-size: 50px;
+    font-size: 30px;
     text-align: left;
+
+    height: 45px;
 }
 
-/* h3 {
-    text-align: left;
-} */
+h4 {
+    color: white;
+}
+
+
 
 .city-name {
-    font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: 40px;
-    font-weight: 800;
+    font-family: neue-haas-grotesk-display, sans-serif ;
+    font-size: 40px ;
+    font-weight: 800 ;
+    margin: 0;
 }
 
 
@@ -90,7 +98,7 @@ h3 {
 .display-top,
 .display-bottom {
     margin: 0;
-    padding: 25px;
+    padding: 20px;
     border: 2px solid #333;
     border-radius: 5px;
 }
@@ -113,4 +121,10 @@ h3 {
     color: aliceblue;
     text-align: center;
     padding: 10px;
+}
+
+img {
+    width: 75px;
+    margin: 0;
+    padding-bottom: 10px;
 }
