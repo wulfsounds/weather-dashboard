@@ -11,6 +11,10 @@ let wind;
 let humidity;
 let uvIndex;
 
+// Setting the clock to exist beneath city name
+let currentDate = moment().format("L");
+$(".current-date").text(`(${currentDate})`);
+
 // Set button to fire off localCity();
 searchBtn.addEventListener("click", localCity);
 
@@ -79,15 +83,14 @@ function dashboard() {
 	// Build Header with City Name, todays date, and weather icon
 	// Current Date
 	let icon = weather.current.weather[0].icon;
-	let currentDate = moment().format("L");
+	
 	// Weather Icon
 	let img = document.createElement("img");
 	img.setAttribute(`src`, `http://openweathermap.org/img/wn/${icon}@2x.png`);
 	img.setAttribute("alt", "weather-icon");
 	// Header
 	$(".city-name").text(`${getLocation.toLowerCase()}.`);
-	$(".current-date").text(`(${currentDate})`);
-	$(".city-name").append(img);
+	$(".h2-contain").append(img);
 
 	// Populate top display with temp, wind, humidity, and UV
 	// Temp

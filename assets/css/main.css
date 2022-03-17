@@ -1,10 +1,20 @@
+body {
+    /* height: 80vh; */
+}
+
 p {
     font-family: neue-haas-grotesk-display,sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 20px;
     margin: 0;
-    margin-top: 10px;
+    margin-bottom: 8px;
+    /* margin-top: 10px; */
+    color: white;
+}
+
+.current-date {
+    margin-top: 3px;
 }
 
 h1 {
@@ -36,6 +46,14 @@ h1 {
 	}
 }
 
+span {
+    font-family: neue-haas-grotesk-display, sans-serif ;
+    font-size: 25px ;
+    font-weight: 100;
+    text-align: center;
+    margin-left: 15px;
+}
+
 .main-contain {
     display: flex;
     justify-content: space-between;
@@ -43,11 +61,20 @@ h1 {
 
 aside {
     width: 600px;
-    height: 100vh;
+    height: 80vh;
 }
 
 .card {
-    height: 100vh;
+    height: 80vh;
+}
+
+.h2-contain {
+    display: flex;
+    justify-content:flex-start;
+    flex: 0;
+    height: 75px;
+    margin-bottom: 10px;
+    margin-top: 25px;
 }
 
 h2,
@@ -57,8 +84,12 @@ h3 {
     font-style: normal;
     font-size: 30px;
     text-align: left;
+    margin: 0;
+    /* height: 45px; */
+}
 
-    height: 45px;
+h3 {
+    text-align: center;
 }
 
 h4 {
@@ -72,12 +103,16 @@ h4 {
     font-size: 40px ;
     font-weight: 800 ;
     margin: 0;
+    color: white;
+    height: 45px;
+    width: 150px;
 }
 
 
 .forecast {
     font-size: 25px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
+    height: 160px;
 }
 
 .container {
@@ -85,29 +120,44 @@ h4 {
     position: relative;
     margin: 0 auto;
     margin-top: 20px;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 #dashboard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80vh;
+    /* height: 80vh; */
 }
 
 .display-top,
 .display-bottom {
     margin: 0;
-    padding: 20px;
-    border: 2px solid #333;
+    /* border: 5px solid rgb(43, 45, 48); */
     border-radius: 5px;
+}
+
+.display-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    /* align-items: space-between; */
+    background-color: rgb(97, 83, 117);
+    padding-left: 20px;
+    height: 300px;
+
+}
+
+.display-bottom {
+    padding-top: 10px;
 }
 
 .five-day {
     display: flex;
+    flex: 1 0 auto;
     justify-content: space-between;
     /* border: #e73c7e solid 2px; */
-    height: 35vh;
+    height: 32vh;
     margin: 0;
 }
 
@@ -118,13 +168,13 @@ h4 {
     font-family: neue-haas-grotesk-display, sans-serif;
     font-size: 40px;
     font-weight: 800;
-    color: aliceblue;
+    color: white;
     text-align: center;
     padding: 10px;
 }
 
 img {
-    width: 75px;
+    width: 50px;
     margin: 0;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }

@@ -1,8 +1,10 @@
-# Weather
+# Weather.
 
 ## **Objectives**
 
-* To create a simple weather web application using Third-Party APIs. 
+To create a simple weather web application using Third-Party APIs. 
+
+No Frills, no ads. Just Weather, period.
 
 ## <img src="https://64.media.tumblr.com/tumblr_mdghlnkX3f1qdtfd6o1_400.gif" alt="hyrule-crest" width="25"/> **Quest Items** <img src="https://64.media.tumblr.com/tumblr_mdghlnkX3f1qdtfd6o1_400.gif" alt="hyrule-crest" width="25"/>
 

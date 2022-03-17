@@ -13,12 +13,12 @@
     <!-- Third-Party Fonts.css -->
     <link rel="stylesheet" href="https://use.typekit.net/wxx1acr.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
-    <title>Weather. | Made with OpenWeather API</title>
+    <title>Weather. | Just Weather, period.</title>
 </head>
 
 <body>
     <header>
-        <h1 class="col-12">Weather.</h1>
+        <h1 class="col-12">Weather.<span>No frills, no ads. Just weather, period.</span></h1>
     </header>
     <main class="main-contain">
 
@@ -39,18 +39,20 @@
         <div class="container col-9">
             <div id="dashboard" class="container-fluid">
                 <div class="display-top">
-                    <h2 class="city-name">houston.</h2>
-                    <p class="current-date"></p>
+                    <div class="h2-contain">
+                        <h2 class="city-name">houston.</h2>
+                    </div>
                     <div class="forecast">
+                        <p class="current-date"></p>
                         <p class="temp">Temp:</p>
                         <p class="wind">Wind:</p>
                         <p class="humid">Humidity:</p>
-                        <p class="uv-index">UV Index: <span><h4 class="badge"></h4></span>
+                        <p class="uv-index">UV Index: <span class="badge"></span>
                         </p>
                     </div>
                 </div>
-                <div id="display-bottom"></div>
-                <h3>five-day forecast:</h3>
+                <div id="display-bottom">
+                <h3>five-day forecast.</h3>
                 <div class="five-day">
                     <div id="week" class="col-2 day-one"></div>
                     <div id="week" class="col-2 day-two"></div>
@@ -58,6 +60,7 @@
                     <div id="week" class="col-2 day-four"></div>
                     <div id="week" class="col-2 day-five"></div>
                 </div>
+            </div>
             </div>
         </div>
     </main>
