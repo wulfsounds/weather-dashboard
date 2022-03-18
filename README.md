@@ -34,15 +34,9 @@ INTRODUCING COLORS
 
 ## **Troubleshooting**
 
-<!-- ## **Contributers**
-  
-<img src="./images/four-swords.png" alt="zelda-four-swords" width="200" />
+* Fixed an issue where the color badge does not match the UV Index.
+* An issue where 5-day content will not appear
 
-**INTRODUCING MULTIPLAYERS!! :D**
-
-   * Eugene Ahn
-   * Kelly Jefferies
-   * Daniel Norred -->
 
 ## **Links**
 
