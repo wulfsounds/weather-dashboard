@@ -21,7 +21,7 @@ No Frills, no ads. Just Weather, period.
 * Created test.js for debug.
 * Created a function that accpets a city and returns latitude and longitude.
 * Added Open Window geocode and weather APIs.
-* 
+*  Fixed an issue where the color badge does not match the UV Index.
 
 ## **HTML Updates**
 * There's a container in a container in a container in a container...
@@ -29,13 +29,12 @@ No Frills, no ads. Just Weather, period.
 
 
 ## **CSS Updates**
-INTRODUCING COLORS
-
+* INTRODUCING COLORS
+* Added thirda party font faces from Adobe
 
 ## **Troubleshooting**
 
-* Fixed an issue where the color badge does not match the UV Index.
-* An issue where 5-day content will not appear
+* UV Index padge is not appearing.
 
 
 ## **Links**
@@ -50,7 +49,7 @@ As used on https://manuelpinto.in
 
 ## **ScreenShots**
 
-
+![Weather-Screenshot](homework/weather-dashboard/assets/images/weather-screenshot.png)
 
 ------------------------------------------------------------------------------
 2022 Dev Wulf for SMU Coding Bootcamp.

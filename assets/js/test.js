@@ -174,7 +174,7 @@ function fiveDay() {
 		$(dayTemp).text(`Temp: ${Math.floor(weather.daily[i].temp.day)}`);
 		$(dayWind).text(`Wind: ${weather.daily[i].wind_speed} MPH`);
 		$(dayHumid).text(`Humidity: ${weather.daily[i].humidity}%`);
-		$(dayUVI).html(`UV Index: ${uviBadge}`);
+		$(dayUVI).text(`UV Index: ${dayBadge}`);
 
 		// Dates
 		for (let j = 0; j < weatherStats.length - 1; j++) {

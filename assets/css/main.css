@@ -9,6 +9,7 @@ p {
     margin-bottom: 8px;
     /* margin-top: 10px; */
     color: white;
+    text-align: left;
 }
 
 .current-date {
@@ -159,9 +160,9 @@ h4 {
     margin: 0;
 }
 
-#dayBox {
+.day-box {
     /* border: #23d5ab solid 2px; */
-    background-color: #ee7752;
+    background-color: #f0ac98;
     border-radius: 5px;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-size: 40px;
