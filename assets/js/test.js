@@ -86,6 +86,7 @@ async function weatherAPI() {
 }
 
 function dashboard() {
+	// e.preventDefault();
 	console.log(weather);
 	// Build Header with City Name, todays date, and weather icon
 	console.log(weather);
@@ -131,88 +132,108 @@ function dashboard() {
 function fiveDay() {
 	console.log("fiveDay OK");
 	console.log(weather);
-	let i = 0;
-	const weatherStats = [weather.daily.slice(1, 6)];
-	// console.log(weatherStats);
-	// let icon = weather.daily[i].weather[0].icon;
-	// console.log(icon);
-
-	weather.daily.slice(1, 6).forEach(function (weatherObject) {
-		let icon = weather.daily[i].weather[0].icon;
-
-		let dayBox = document.createElement("div");
-		dayBox.setAttribute("class", "col-2 day-box");
-		let forecast = document.createElement("div");
-		forecast.setAttribute("class", "forecast");
-		let dayDate = document.createElement("p");
-		dayDate.setAttribute("class", "day-date");
-		let dayIcon = document.createElement("img");
-		dayIcon.setAttribute(
-			`src`,
-			`http://openweathermap.org/img/wn/${icon}@2x.png`
-		);
-		let dayTemp = document.createElement("p");
-		dayTemp.setAttribute("class", "day-temp");
-		let dayWind = document.createElement("p");
-		dayWind.setAttribute("class", "day-wind");
-		let dayHumid = document.createElement("p");
-		dayHumid.setAttribute("class", "day-humid");
-		let dayUVI = document.createElement("p");
-		dayUVI.setAttribute("class", "day-uvi");
-		let dayBadge = document.createElement("span");
-		dayBadge.setAttribute("class", "day-badge");
-
-		$(".five-day").append(dayBox);
-		$(dayBox).append(forecast);
-		$(forecast).append(dayDate);
-		$(forecast).append(dayIcon);
-		$(forecast).append(dayTemp);
-		$(forecast).append(dayWind);
-		$(forecast).append(dayHumid);
-		$(forecast).append(dayUVI);
-		$(dayUVI).append(dayBadge);
-		$(dayTemp).text(`Temp: ${Math.floor(weather.daily[i].temp.day)}`);
-		$(dayWind).text(`Wind: ${weather.daily[i].wind_speed} MPH`);
-		$(dayHumid).text(`Humidity: ${weather.daily[i].humidity}%`);
-		$(dayUVI).text(`UV Index: ${dayBadge}`);
-
-		// Dates
-		for (let j = 0; j < weatherStats.length - 1; j++) {
-			$(dayDate).text(`${moment.add([j], "days").calendar()}`);
+	let fiveDayStat = weather.daily.slice(1, 6)
+	console.log(fiveDayStat);
+	console.log(fiveDayStat[0].temp.day);
+	console.log(fiveDayStat[0].wind_speed);
+	console.log(fiveDayStat[0].humidity);
+	console.log(fiveDayStat[0].uvi);
+	console.log(fiveDayStat[0].weather[0].id);
+	
+	for (let i = 0; i < fiveDayStat[i].length; i++) {
+		console.log(fiveDayStat[0].temp.day);
+		console.log(fiveDayStat[0].wind_speed);
+		console.log(fiveDayStat[0].humidity);
+		console.log(fiveDayStat[0].uvi);
+		console.log(fiveDayStat[0].weather[0].id);
+		for (let j = 0; j < weather.daily[i] - 1; j++) {
+			console.log(moment().add(j), 'days').calendar();
+			// $(dayDate).text(`${moment.add([j], "days").calendar()}`);
 		}
+	}
 
-		if (weather.daily[i].uvi <= 2) {
-			console.log("green");
-			$(dayBadge)
-				.css("background-color", "green")
-				.html(`${weather.daily[i].uvi}`);
-			return (uviBadge = dayBadge);
-		} else if (weather.daily[i].uvi >= 3 && weather.daily[i].uvi <= 5) {
-			console.log("yellow");
-			$(dayBadge)
-				.css("background-color", "rgb(186, 186, 3)")
-				.html(`${weather.daily[i].uvi}`);
-			return (uviBadge = dayBadge);
-		} else if (weather.daily[i].uvi >= 6 && weather.daily[i].uvi <= 7) {
-			console.log("orange");
-			$(dayBadge)
-				.css("background-color", "orange")
-				.html(`${weather.daily[i].uvi}`);
-			return (uviBadge = dayBadge);
-		} else if (weather.daily[i].uvi >= 8 && weather.daily[i].uvi <= 11) {
-			console.log("red");
-			$(dayBadge)
-				.css("background-color", "red")
-				.html(`${weather.daily[i].uvi}`);
-			return (uviBadge = dayBadge);
-		} else if (weather.daily[i].uvi >= 11) {
-			console.log("purple");
-			$(dayBadge)
-				.css("background-color", "purple")
-				.html(`${weather.daily[i].uvi}`);
-			return (uviBadge = dayBadge);
-		}
 
-		i++;
-	});
+
+
+	// console.log("fiveDay OK");
+	// let i = 0;
+
+	// weather.daily.slice(1, 6).forEach(() => {
+	// 		let icon = weather.daily[i].weather[0].icon;
+
+	// 		let dayBox = document.createElement("div");
+	// 		dayBox.setAttribute("class", "col-2 day-box");
+	// 		let forecast = document.createElement("div");
+	// 		forecast.setAttribute("class", "forecast");
+	// 		let dayDate = document.createElement("p");
+	// 		dayDate.setAttribute("class", "day-date");
+	// 		let dayIcon = document.createElement("img");
+	// 		dayIcon.setAttribute(
+	// 			`src`,
+	// 			`http://openweathermap.org/img/wn/${icon}@2x.png`
+	// 		);
+	// 		let dayTemp = document.createElement("p");
+	// 		dayTemp.setAttribute("class", "day-temp");
+	// 		let dayWind = document.createElement("p");
+	// 		dayWind.setAttribute("class", "day-wind");
+	// 		let dayHumid = document.createElement("p");
+	// 		dayHumid.setAttribute("class", "day-humid");
+	// 		let dayUVI = document.createElement("p");
+	// 		dayUVI.setAttribute("class", "day-uvi");
+	// 		let dayBadge = document.createElement("span");
+	// 		dayBadge.setAttribute("class", "day-badge");
+
+	// 		$(".five-day").append(dayBox);
+	// 		$(dayBox).append(forecast);
+	// 		$(forecast).append(dayDate);
+	// 		$(forecast).append(dayIcon);
+	// 		$(forecast).append(dayTemp);
+	// 		$(forecast).append(dayWind);
+	// 		$(forecast).append(dayHumid);
+	// 		$(forecast).append(dayUVI);
+	// 		$(dayUVI).append(dayBadge);
+	// 		$(dayTemp).text(`Temp: ${Math.floor(weather.daily[i].temp.day)}`);
+	// 		$(dayWind).text(`Wind: ${weather.daily[i].wind_speed} MPH`);
+	// 		$(dayHumid).text(`Humidity: ${weather.daily[i].humidity}%`);
+	// 		$(dayUVI).text(`UV Index: ${dayBadge}`);
+
+	// 		// Dates
+	// 		for (let j = 0; j < weather.daily[i] - 1; j++) {
+	// 			$(dayDate).text(`${moment.add([j], "days").calendar()}`);
+	// 		}
+
+	// 		if (weather.daily[i].uvi <= 2) {
+	// 			console.log("green");
+	// 			$(dayBadge)
+	// 				.css("background-color", "green")
+	// 				.html(`${weather.daily[i].uvi}`);
+	// 			return (uviBadge = dayBadge);
+	// 		} else if (weather.daily[i].uvi >= 3 && weather.daily[i].uvi <= 5) {
+	// 			console.log("yellow");
+	// 			$(dayBadge)
+	// 				.css("background-color", "rgb(186, 186, 3)")
+	// 				.html(`${weather.daily[i].uvi}`);
+	// 			return (uviBadge = dayBadge);
+	// 		} else if (weather.daily[i].uvi >= 6 && weather.daily[i].uvi <= 7) {
+	// 			console.log("orange");
+	// 			$(dayBadge)
+	// 				.css("background-color", "orange")
+	// 				.html(`${weather.daily[i].uvi}`);
+	// 			return (uviBadge = dayBadge);
+	// 		} else if (weather.daily[i].uvi >= 8 && weather.daily[i].uvi <= 11) {
+	// 			console.log("red");
+	// 			$(dayBadge)
+	// 				.css("background-color", "red")
+	// 				.html(`${weather.daily[i].uvi}`);
+	// 			return (uviBadge = dayBadge);
+	// 		} else if (weather.daily[i].uvi >= 11) {
+	// 			console.log("purple");
+	// 			$(dayBadge)
+	// 				.css("background-color", "purple")
+	// 				.html(`${weather.daily[i].uvi}`);
+	// 			return (uviBadge = dayBadge);
+	// 		}
+
+	// 		i++;
+	// 	});
 }
