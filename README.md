@@ -30,7 +30,7 @@ No Frills, no ads. Just Weather, period.
 
 ## **CSS Updates**
 * INTRODUCING COLORS
-* Added thirda party font faces from Adobe
+* Added third party font faces from Adobe
 
 ## **Troubleshooting**
 
